@@ -1,0 +1,491 @@
+//Script
+<script>
+  jQuery(document).ready(function ($) {
+     
+      var total_data = 0;
+      var final_amount = 0;
+      var final_amount_in_usd = 0;
+   
+      var orderType = $('input[name=orderType]:checked').val();
+      var numb_of_words = $('#pageValue').find(":selected").val();
+      var services_name = $('#servicesValue').find(":selected").val();
+      var serviceValue = $('input[name=contentservice]:checked').val();
+      var qualityValue = $('input[name=quality]').val();
+      var timeValue = $('input[name=hour]:checked').val();
+   
+      var quantity = $('#quatval').val();
+      total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+      final_amount = total_data * numb_of_words * 0.05 * quantity;
+      final_amount_in_usd = final_amount / 140;
+      $('#result').text("$_"+final_amount_in_usd.toFixed()+" ");
+      $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+   
+      //Formula orderType + numb_of_words + serviceValue + qualityValue + timeValue * 5.5 * quantity
+      $("#quatval").on('keyup mouseup', function (){
+   
+          var orderType = $('input[name=orderType]:checked').val();
+          var numb_of_words = $('#pageValue').find(":selected").val();
+          var services_name = $('#servicesValue').find(":selected").val();
+          var serviceValue = $('input[name=contentservice]:checked').val();
+          var qualityValue = $('input[name=quality]').val();
+          var timeValue = $('input[name=hour]:checked').val();
+   
+          var quantity = $('#quatval').val();
+          total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+          final_amount = total_data * numb_of_words * 0.05 * quantity;
+          final_amount_in_usd = final_amount / 140;
+          $('#result').text("$ "+final_amount_in_usd.toFixed()+" ");
+          $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+                  });
+   
+   
+      $('input[type=radio][name=contentservice]').change(function() {
+          var orderType = $('input[name=orderType]:checked').val();
+          var numb_of_words = $('#pageValue').find(":selected").val();
+          var services_name = $('#servicesValue').find(":selected").val();
+          var serviceValue = $('input[name=contentservice]:checked').val();
+          var qualityValue = $('input[name=quality]').val();
+          var timeValue = $('input[name=hour]:checked').val();
+   
+          var quantity = $('#quatval').val();
+          total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+          final_amount = total_data * numb_of_words * 0.05 * quantity;
+          final_amount_in_usd = final_amount / 140;
+          $('#result').text("$ "+final_amount_in_usd.toFixed()+" ");
+          $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+   
+      });
+   
+      $('input[type=radio][name=hour]').change(function() {
+          var orderType = $('input[name=orderType]:checked').val();
+          var numb_of_words = $('#pageValue').find(":selected").val();
+          var services_name = $('#servicesValue').find(":selected").val();
+          var serviceValue = $('input[name=contentservice]:checked').val();
+          var qualityValue = $('input[name=quality]').val();
+          var timeValue = $('input[name=hour]:checked').val();
+   
+          var quantity = $('#quatval').val();
+          total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+          final_amount = total_data * numb_of_words * 0.05 * quantity;
+          final_amount_in_usd = final_amount / 140;
+          $('#result').text("$ "+final_amount_in_usd.toFixed()+" ");
+          $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+   
+      });
+   
+      $('input[type=radio][name=quality]').change(function() {
+          var orderType = $('input[name=orderType]:checked').val();
+          var numb_of_words = $('#pageValue').find(":selected").val();
+          var services_name = $('#servicesValue').find(":selected").val();
+          var serviceValue = $('input[name=contentservice]:checked').val();
+          var qualityValue = $('input[name=quality]').val();
+          var timeValue = $('input[name=hour]:checked').val();
+   
+          var quantity = $('#quatval').val();
+          total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+          final_amount = total_data * numb_of_words * 0.05 * quantity;
+          final_amount_in_usd = final_amount / 140;
+          $('#result').text("$ "+final_amount_in_usd.toFixed()+" ");
+          $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+   
+      });
+   
+      $('#pageValue').on('change',function () {
+          var orderType = $('input[name=orderType]:checked').val();
+          var numb_of_words = $('#pageValue').find(":selected").val();
+          var services_name = $('#servicesValue').find(":selected").val();
+          var serviceValue = $('input[name=contentservice]:checked').val();
+          var qualityValue = $('input[name=quality]').val();
+          var timeValue = $('input[name=hour]:checked').val();
+   
+          var quantity = $('#quatval').val();
+          total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+          final_amount = total_data * numb_of_words * 0.05 * quantity;
+          final_amount_in_usd = final_amount / 140;
+          $('#result').text("$ "+final_amount_in_usd.toFixed()+" ");
+          $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+      });
+   
+      $('#servicesValue').on('change',function () {
+          var orderType = $('input[name=orderType]:checked').val();
+          var numb_of_words = $('#pageValue').find(":selected").val();
+          var services_name = $('#servicesValue').find(":selected").val();
+          var serviceValue = $('input[name=contentservice]:checked').val();
+          var qualityValue = $('input[name=quality]').val();
+          var timeValue = $('input[name=hour]:checked').val();
+   
+          var quantity = $('#quatval').val();
+          total_data = parseInt(services_name) + parseInt(qualityValue) + parseInt(timeValue);
+          final_amount = total_data * numb_of_words * 0.05 * quantity;
+          final_amount_in_usd = final_amount / 140;
+          $('#result').text("$ "+final_amount_in_usd.toFixed()+" ");
+          $('input[name=totalAmount]').val(final_amount_in_usd.toFixed());
+      });
+   
+//   if (window.location.href.indexOf("article") > -1) {
+//       $("#result").text("$ 12");
+//   }
+   
+  });
+   
+   
+</script>
+
+
+//Form
+<form method="post" action="calculatorInquiry">
+                        <div class="col-md-4 col-sm-4 top50">
+                            <div class="inquiry_form_div_calc   ">
+                               <h2 id="result" class="white_text_color formHeading calcHeading ">$ 0</h2>
+                                <input type="hidden" name="totalAmount" id="result" value="">
+                                <input type="hidden" name="myCustomServiceName" value="<?php if($uriSegments[1]=='' || $uriSegments[1]=='index'){echo 'Content Writing Hub';  }else if($uriSegments[1]=='blog-post'){echo 'Blog Writing ';   }else if($uriSegments[1]=='web-copy'){echo 'Web Copy ';}else if($uriSegments[1]=='seo-content'){echo 'Seo Content  ';}else if($uriSegments[1]=='product-description'){echo 'Product Description ';}else if($uriSegments[1]=='tagline-slogan'){echo 'Tagline Slogan ';}else if($uriSegments[1]=='article'){echo 'Article  ';}else if($uriSegments[1]=='press-release'){echo 'Press Release ';}else if($uriSegments[1]=='script-writing'){echo 'Script Writing ';}else if($uriSegments[1]=='email-marketing'){echo 'Email Marketing ';}else if($uriSegments[1]=='news-letter'){echo 'Newsletter ';}else if($uriSegments[1]=='business-presentation'){echo 'Business Presentation ';}else if($uriSegments[1]=='e-book'){echo 'E-Book ';}else if($uriSegments[1]=='cover-letter'){echo 'Cover Letter ';}else if($uriSegments[1]=='resume'){echo 'Resume ';}else if($uriSegments[1]=='application-writing'){echo 'Application Writing ';}else if($uriSegments[1]=='demand-letter-writing'){echo 'Demand Letter Writing ';}else if($uriSegments[1]=='facebook'){echo 'Facebook ';}else if($uriSegments[1]=='twitter'){echo 'Twitter ';}else if($uriSegments[1]=='instagram'){echo 'Instagram ';}else if($uriSegments[1]=='linkedin'){echo 'Linkedin ';}else if($uriSegments[1]=='contactus'){echo 'Contact Us ';}else if($uriSegments[1]=='packages'){echo 'Our Packages ';}else if($uriSegments[1]=='custom-packages'){echo 'Our Custom Packages ';}else if($uriSegments[1]=='terms-condition'){echo 'Terms Condition ';}else if($uriSegments[1]=='privacy-policy'){echo 'Privacy Policy ';}else if($uriSegments[1]=='refund-policy'){echo 'Refund Policy ';}?> ">
+                               <input type="hidden" class="qualty quality_name_2 qualityValue" name="quality" value="1">
+                                    <div class="form-group">                        
+                                        <select name="page_word_count" id="pageValue"  class="form-control  cal_input wordcount_name_1">
+                                                                    <option value="250">1 Page / 250 words</option>
+                                                                    <option value="500">2 Pages / 500 words</option>
+                                                                    <option value="750">3 Pages / 750 words</option>
+                                                                    <option value="1000">4 Pages / 1000 words</option>
+                                                                    <option value="1250">5 Pages / 1250 words</option>
+                                                                    <option value="1500">6 Pages / 1500 words</option>
+                                                                    <option value="1750">7 Pages / 1750 words</option>
+                                                                    <option value="2000">8 Pages / 2000 words</option>
+                                                                    <option value="2250">9 Pages / 2250 words</option>
+                                                                    <option value="2500">10 Pages / 2500 words</option>
+                                                                    <option value="2750">11 Pages / 2750 words</option>
+                                                                    <option value="3000">12 Pages / 3000 words</option>
+                                                                    <option value="3250">13 Pages / 3250 words</option>
+                                                                    <option value="3500">14 Pages / 3500 words</option>
+                                                                    <option value="3750">15 Pages / 3750 words</option>
+                                                                    <option value="4000">16 Pages / 4000 words</option>
+                                                                    <option value="4500">18 Pages / 4500 words</option>
+                                                                    <option value="4750">19 Pages / 4750 words</option>
+                                                                    <option value="5000">20 Pages / 5000 words</option>
+                                                                    <option value="5250">21 Pages / 5250 words</option>
+                                                                    <option value="5500">22 Pages / 5500 words</option>
+                                                                    <option value="5750">23 Pages / 5750 words</option>
+                                                                    <option value="6000">24 Pages / 6000 words</option>
+                                                                    <option value="6250">25 Pages / 6250 words</option>
+                                                                    <option value="6500">26 Pages / 6500 words</option>
+                                                                    <option value="6750">27 Pages / 6750 words</option>
+                                                                    <option value="7000">28 Pages / 7000 words</option>
+                                                                    <option value="7250">29 Pages / 7250 words</option>
+                                                                    <option value="7500">30 Pages / 7500 words</option>
+                                                                    <option value="7750">31 Pages / 7750 words</option>
+                                                                    <option value="8000">32 Pages / 8000 words</option>
+                                                                    <option value="8250">33 Pages / 8250 words</option>
+                                                                    <option value="8500">34 Pages / 8500 words</option>
+                                                                    <option value="8750">35 Pages / 8750 words</option>
+                                                                    <option value="9000">36 Pages / 9000 words</option>
+                                                                    <option value="9250">37 Pages / 9250 words</option>
+                                                                    <option value="9500">38 Pages / 9500 words</option>
+                                                                    <option value="9750">39 Pages / 9750 words</option>
+                                                                    <option value="10000">40 Pages / 10000 words</option>
+                                                                    <option value="10250">41 Pages / 10250 words</option>
+                                                                    <option value="10500">42 Pages / 10500 words</option>
+                                                                    <option value="10750">43 Pages / 10750 words</option>
+                                                                    <option value="11000">44 Pages / 11000 words</option>
+                                                                    <option value="11250">45 Pages / 11250 words</option>
+                                                                    <option value="11500">46 Pages / 11500 words</option>
+                                                                    <option value="11750">47 Pages / 11750 words</option>
+                                                                    <option value="12000">48 Pages / 12000 words</option>
+                                                                    <option value="12250">49 Pages / 12250 words</option>
+                                                                    <option value="12500">50 Pages / 12500 words</option>
+                                                                    <option value="12750">51 Pages / 12750 words</option>
+                                                                    <option value="13000">52 Pages / 13000 words</option>
+                                                                    <option value="13250">53 Pages / 13250 words</option>
+                                                                    <option value="13500">54 Pages / 13500 words</option>
+                                                                    <option value="13750">55 Pages / 13750 words</option>
+                                                                    <option value="14000">56 Pages / 14000 words</option>
+                                                                    <option value="14250">57 Pages / 14250 words</option>
+                                                                    <option value="14500">58 Pages / 14500 words</option>
+                                                                    <option value="14750">59 Pages / 14750 words</option>
+                                                                    <option value="15000">60 Pages / 15000 words</option>
+                                                                    <option value="15250">61 Pages / 15250 words</option>
+                                                                    <option value="15500">62 Pages / 15500 words</option>
+                                                                    <option value="15750">63 Pages / 15750 words</option>
+                                                                    <option value="16000">64 Pages / 16000 words</option>
+                                                                    <option value="16250">65 Pages / 16250 words</option>
+                                                                    <option value="16500">66 Pages / 16500 words</option>
+                                                                    <option value="16750">67 Pages / 16750 words</option>
+                                                                    <option value="17000">68 Pages / 17000 words</option>
+                                                                    <option value="17250">69 Pages / 17250 words</option>
+                                                                    <option value="17500">70 Pages / 17500 words</option>
+                                                                    <option value="17750">71 Pages / 17750 words</option>
+                                                                    <option value="18000">72 Pages / 18000 words</option>
+                                                                    <option value="18250">73 Pages / 18250 words</option>
+                                                                    <option value="18500">74 Pages / 18500 words</option>
+                                                                    <option value="18750">75 Pages / 18750 words</option>
+                                                                    <option value="19000">76 Pages / 19000 words</option>
+                                                                    <option value="19250">77 Pages / 19250 words</option>
+                                                                    <option value="19500">78 Pages / 19500 words</option>
+                                                                    <option value="19750">79 Pages / 19750 words</option>
+                                                                    <option value="20000">80 Pages / 20000 words</option>
+                                                                    <option value="20250">81 Pages / 20250 words</option>
+                                                                    <option value="20500">82 Pages / 20500 words</option>
+                                                                    <option value="20750">83 Pages / 20750 words</option>
+                                                                    <option value="21000">84 Pages / 21000 words</option>
+                                                                    <option value="21250">85 Pages / 21250 words</option>
+                                                                    <option value="21500">86 Pages / 21500 words</option>
+                                                                    <option value="21750">87 Pages / 21750 words</option>
+                                                                    <option value="22000">88 Pages / 22000 words</option>
+                                                                    <option value="22250">89 Pages / 22250 words</option>
+                                                                    <option value="22500">90 Pages / 22500 words</option>
+                                                                    <option value="22750">91 Pages / 22750 words</option>
+                                                                    <option value="23000">92 Pages / 23000 words</option>
+                                                                    <option value="23250">93 Pages / 23250 words</option>
+                                                                    <option value="23500">94 Pages / 23500 words</option>
+                                                                    <option value="23750">95 Pages / 23750 words</option>
+                                                                    <option value="24000">96 Pages / 24000 words</option>
+                                                                    <option value="24250">97 Pages / 24250 words</option>
+                                                                    <option value="24500">98 Pages / 24500 words</option>
+                                                                    <option value="24750">99 Pages / 24750 words</option>
+                                                                    <option value="25000">100 Pages / 25000 words</option>
+                                                                    <option value="25250">101 Pages / 25250 words</option>
+                                                                    <option value="25500">102 Pages / 25500 words</option>
+                                                                    <option value="25750">103 Pages / 25750 words</option>
+                                                                    <option value="26000">104 Pages / 26000 words</option>
+                                                                    <option value="26250">105 Pages / 26250 words</option>
+                                                                    <option value="26500">106 Pages / 26500 words</option>
+                                                                    <option value="26750">107 Pages / 26750 words</option>
+                                                                    <option value="27000">108 Pages / 27000 words</option>
+                                                                    <option value="27250">109 Pages / 27250 words</option>
+                                                                    <option value="27500">110 Pages / 27500 words</option>
+                                                                    <option value="27750">111 Pages / 27750 words</option>
+                                                                    <option value="28000">112 Pages / 28000 words</option>
+                                                                    <option value="28250">113 Pages / 28250 words</option>
+                                                                    <option value="28500">114 Pages / 28500 words</option>
+                                                                    <option value="28750">115 Pages / 28750 words</option>
+                                                                    <option value="29000">116 Pages / 29000 words</option>
+                                                                    <option value="29250">117 Pages / 29250 words</option>
+                                                                    <option value="29500">118 Pages / 29500 words</option>
+                                                                    <option value="29750">119 Pages / 29750 words</option>
+                                                                    <option value="30000">120 Pages / 30000 words</option>
+                                                                    <option value="30250">121 Pages / 30250 words</option>
+                                                                    <option value="30500">122 Pages / 30500 words</option>
+                                                                    <option value="30750">123 Pages / 30750 words</option>
+                                                                    <option value="31000">124 Pages / 31000 words</option>
+                                                                    <option value="31250">125 Pages / 31250 words</option>
+                                                                    <option value="31500">126 Pages / 31500 words</option>
+                                                                    <option value="31750">127 Pages / 31750 words</option>
+                                                                    <option value="32000">128 Pages / 32000 words</option>
+                                                                    <option value="32250">129 Pages / 32250 words</option>
+                                                                    <option value="32500">130 Pages / 32500 words</option>
+                                                                    <option value="32750">131 Pages / 32750 words</option>
+                                                                    <option value="33000">132 Pages / 33000 words</option>
+                                                                    <option value="33250">133 Pages / 33250 words</option>
+                                                                    <option value="33500">134 Pages / 33500 words</option>
+                                                                    <option value="33750">135 Pages / 33750 words</option>
+                                                                    <option value="34000">136 Pages / 34000 words</option>
+                                                                    <option value="34250">137 Pages / 34250 words</option>
+                                                                    <option value="34500">138 Pages / 34500 words</option>
+                                                                    <option value="34750">139 Pages / 34750 words</option>
+                                                                    <option value="35000">140 Pages / 35000 words</option>
+                                                                    <option value="35250">141 Pages / 35250 words</option>
+                                                                    <option value="35500">142 Pages / 35500 words</option>
+                                                                    <option value="35750">143 Pages / 35750 words</option>
+                                                                    <option value="36000">144 Pages / 36000 words</option>
+                                                                    <option value="36250">145 Pages / 36250 words</option>
+                                                                    <option value="36500">146 Pages / 36500 words</option>
+                                                                    <option value="36750">147 Pages / 36750 words</option>
+                                                                    <option value="37000">148 Pages / 37000 words</option>
+                                                                    <option value="37250">149 Pages / 37250 words</option>
+                                                                    <option value="37500">150 Pages / 37500 words</option>
+                                                                    <option value="37750">151 Pages / 37750 words</option>
+                                                                    <option value="38000">152 Pages / 38000 words</option>
+                                                                    <option value="38250">153 Pages / 38250 words</option>
+                                                                    <option value="38500">154 Pages / 38500 words</option>
+                                                                    <option value="38750">155 Pages / 38750 words</option>
+                                                                    <option value="39000">156 Pages / 39000 words</option>
+                                                                    <option value="39250">157 Pages / 39250 words</option>
+                                                                    <option value="39500">158 Pages / 39500 words</option>
+                                                                    <option value="39750">159 Pages / 39750 words</option>
+                                                                    <option value="40000">160 Pages / 40000 words</option>
+                                                                    <option value="40250">161 Pages / 40250 words</option>
+                                                                    <option value="40500">162 Pages / 40500 words</option>
+                                                                    <option value="40750">163 Pages / 40750 words</option>
+                                                                    <option value="41000">164 Pages / 41000 words</option>
+                                                                    <option value="41250">165 Pages / 41250 words</option>
+                                                                    <option value="41500">166 Pages / 41500 words</option>
+                                                                    <option value="41750">167 Pages / 41750 words</option>
+                                                                    <option value="42000">168 Pages / 42000 words</option>
+                                                                    <option value="42250">169 Pages / 42250 words</option>
+                                                                    <option value="42500">170 Pages / 42500 words</option>
+                                                                    <option value="42750">171 Pages / 42750 words</option>
+                                                                    <option value="43000">172 Pages / 43000 words</option>
+                                                                    <option value="43250">173 Pages / 43250 words</option>
+                                                                    <option value="43500">174 Pages / 43500 words</option>
+                                                                    <option value="43750">175 Pages / 43750 words</option>
+                                                                    <option value="44000">176 Pages / 44000 words</option>
+                                                                    <option value="44250">177 Pages / 44250 words</option>
+                                                                    <option value="44500">178 Pages / 44500 words</option>
+                                                                    <option value="44750">179 Pages / 44750 words</option>
+                                                                    <option value="45000">180 Pages / 45000 words</option>
+                                                                    <option value="45250">181 Pages / 45250 words</option>
+                                                                    <option value="45500">182 Pages / 45500 words</option>
+                                                                    <option value="45750">183 Pages / 45750 words</option>
+                                                                    <option value="46000">184 Pages / 46000 words</option>
+                                                                    <option value="46250">185 Pages / 46250 words</option>
+                                                                    <option value="46500">186 Pages / 46500 words</option>
+                                                                    <option value="46750">187 Pages / 46750 words</option>
+                                                                    <option value="47000">188 Pages / 47000 words</option>
+                                                                    <option value="47250">189 Pages / 47250 words</option>
+                                                                    <option value="47500">190 Pages / 47500 words</option>
+                                                                    <option value="47750">191 Pages / 47750 words</option>
+                                                                    <option value="48000">192 Pages / 48000 words</option>
+                                                                    <option value="48250">193 Pages / 48250 words</option>
+                                                                    <option value="48500">194 Pages / 48500 words</option>
+                                                                    <option value="48750">195 Pages / 48750 words</option>
+                                                                    <option value="49000">196 Pages / 49000 words</option>
+                                                                    <option value="49250">197 Pages / 49250 words</option>
+                                                                    <option value="49500">198 Pages / 49500 words</option>
+                                                                    <option value="49750">199 Pages / 49750 words</option>
+                                                                    <option value="50000">200 Pages / 50000 words</option>
+                                                                    <option value="50250">201 Pages / 50250 words</option>
+                                                                    <option value="50500">202 Pages / 50500 words</option>
+                                                                    <option value="50750">203 Pages / 50750 words</option>
+                                                                    <option value="51000">204 Pages / 51000 words</option>
+                                                                    <option value="51250">205 Pages / 51250 words</option>
+                                                                    <option value="51500">206 Pages / 51500 words</option>
+                                                                    <option value="51750">207 Pages / 51750 words</option>
+                                                                    <option value="52000">208 Pages / 52000 words</option>
+                                                                    <option value="52250">209 Pages / 52250 words</option>
+                                                                    <option value="52500">210 Pages / 52500 words</option>
+                                                                    <option value="52750">211 Pages / 52750 words</option>
+                                                                    <option value="53000">212 Pages / 53000 words</option>
+                                                                    <option value="53250">213 Pages / 53250 words</option>
+                                                                    <option value="53500">214 Pages / 53500 words</option>
+                                                                    <option value="53750">215 Pages / 53750 words</option>
+                                                                    <option value="54000">216 Pages / 54000 words</option>
+                                                                    <option value="54250">217 Pages / 54250 words</option>
+                                                                    <option value="54500">218 Pages / 54500 words</option>
+                                                                    <option value="54750">219 Pages / 54750 words</option>
+                                                                    <option value="55000">220 Pages / 55000 words</option>
+                                                                    <option value="55250">221 Pages / 55250 words</option>
+                                                                    <option value="55500">222 Pages / 55500 words</option>
+                                                                    <option value="55750">223 Pages / 55750 words</option>
+                                                                    <option value="56000">224 Pages / 56000 words</option>
+                                                                    <option value="56250">225 Pages / 56250 words</option>
+                                                                    <option value="56500">226 Pages / 56500 words</option>
+                                                                    <option value="56750">227 Pages / 56750 words</option>
+                                                                    <option value="57000">228 Pages / 57000 words</option>
+                                                                    <option value="57250">229 Pages / 57250 words</option>
+                                                                    <option value="57500">230 Pages / 57500 words</option>
+                                                                    <option value="57750">231 Pages / 57750 words</option>
+                                                                    <option value="58000">232 Pages / 58000 words</option>
+                                                                    <option value="58250">233 Pages / 58250 words</option>
+                                                                    <option value="58500">234 Pages / 58500 words</option>
+                                                                    <option value="58750">235 Pages / 58750 words</option>
+                                                                    <option value="59000">236 Pages / 59000 words</option>
+                                                                    <option value="59250">237 Pages / 59250 words</option>
+                                                                    <option value="59500">238 Pages / 59500 words</option>
+                                                                    <option value="59750">239 Pages / 59750 words</option>
+                                                                    <option value="60000">240 Pages / 60000 words</option>
+                                                                    <option value="60250">241 Pages / 60250 words</option>
+                                                                    <option value="60500">242 Pages / 60500 words</option>
+                                                                    <option value="60750">243 Pages / 60750 words</option>
+                                                                    <option value="61000">244 Pages / 61000 words</option>
+                                                                    <option value="61250">245 Pages / 61250 words</option>
+                                                                    <option value="61500">246 Pages / 61500 words</option>
+                                                                    <option value="61750">247 Pages / 61750 words</option>
+                                                                    <option value="62000">248 Pages / 62000 words</option>
+                                                                    <option value="62250">249 Pages / 62250 words</option>
+                                                                    <option value="62500">250 Pages / 62500 words</option>
+                    
+                                                                </select>
+                                    </div>
+                                    <div class="form-group">                        
+                                        <select name="service_name" id="servicesValue"  class=" form-control cal_input services_name_1">
+                                            <option <?php if($uriSegments[1]=='article'){ echo 'selected="true"'; }else{ echo ''; }?>  value="110">Article</option>
+                                            <option <?php if($uriSegments[1]=='blog-post'){ echo 'selected="true"'; }else{ echo ''; }?> value="130">Blog Post</option>
+                                            <option <?php if($uriSegments[1]=='email-marketing'){ echo 'selected="true"'; }else{ echo ''; }?> value="160">Email Marketing</option>
+                                            <option <?php if($uriSegments[1]=='news-letter'){ echo 'selected="true"'; }else{ echo ''; }?> value="140">Newsletter</option>
+                                            <option <?php if($uriSegments[1]=='press-release'){ echo 'selected="true"'; }else{ echo ''; }?> value="180">Press Release</option>
+                                            <option <?php if($uriSegments[1]=='product-description'){ echo 'selected="true"'; }else{ echo ''; }?> value="110">Product Description</option>
+                                            <option <?php if($uriSegments[1]=='resume'){ echo 'selected="true"'; }else{ echo ''; }?> value="550">Resume</option>
+                                            <option <?php if($uriSegments[1]=='seo-content'){ echo 'selected="true"'; }else{ echo ''; }?> value="160">SEO Content</option>
+                                            <option <?php if($uriSegments[1]=='web-copy'){ echo 'selected="true"'; }else{ echo ''; }?> value="160">Website Content</option>
+                                            <option <?php if($uriSegments[1]==''){ echo 'selected="true"'; }else{ echo ''; }?>  value="110">Service</option>
+                                            <option <?php
+                                                        if($uriSegments[1]!='article' && $uriSegments[1]!='blog-post' && $uriSegments[1]!='email-marketing' && $uriSegments[1]!='news-letter' && $uriSegments[1]!='press-release' && $uriSegments[1]!='product-description' && $uriSegments[1]!='resume' && $uriSegments[1]!='seo-content' && $uriSegments[1]!='web-copy')
+                                                        {
+                                                            echo 'selected="true"';
+                                                        }
+                                            ?>  value="110"><?php echo $uriSegments[1];?></option>
+    
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="">
+                                          <label style="color: #fff; margin-left: 18px; font-weight: 500; font-size: 15px;">
+                                              <input type="radio"  onclick="labelCond(5)" class="time timeValue" name="hour" value="5" checked="true">
+                                              Standard
+                                          </label>
+                                          <label style="color: #fff; margin-left: 18px; font-weight: 500; font-size: 15px;">
+                                              <input type="radio" onclick="labelCond(150)"  class="time timeValue" name="hour" value="150">
+                                              <span class="checkmark2"></span>
+                                              Urgent
+                                          </label>
+                                    </div>
+    
+                                    <!--<p style="color: white;">Turnaround Time:</p>-->
+                                    <div class="form-group calculatorTurnAround" style="float:left;color:#fff; display:block;">
+                                            &nbsp;&nbsp;  Turnaround Time :
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group calculatorTurnAround" id="stpkg" style="float:left;color:#fff; display:block;">
+                                            &nbsp;&nbsp;  2 Business Days
+                                    </div>
+                                    <div class="form-group calculatorTurnAround" id="urpkg" style="float:left;color:#fff; display:none;">
+                                            &nbsp;&nbsp;  1 Business Day
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden"  name="quantity" id="quatval"  value="1" class="form-control  cal_input quantity_name_1"  min="1" name="quantity" placeholder="100">
+                                    </div>
+                                    <div class="form-group">                        
+                                        <input required type="text" name="phone_number" class="form-control cal_input special_message_name_1"  placeholder="Phone number" id="special_message" cols="30" rows="10">
+                                    </div>
+                                    <div class="form-group">                        
+                                            <input required  type="text" name="email_address" class="form-control cal_input special_message_name_1" placeholder="Email address" id="email_address">
+                                    </div>
+                                    <div class="form-group">
+                                        <center><input type="submit" class="button CustomChatBtnRed f_margin" value="order now"></center>
+                                    </div>
+                            </div>
+                        </div>
+                </form>
+
+//EMail
+<?php
+
+if($_POST){
+ 
+    $page_word_count = $_POST['page_word_count'];
+    $service_name    = $_POST['myCustomServiceName'];
+    $quantity        = $_POST['quantity'];
+    $phone_number    = $_POST['phone_number'];
+    $email_address   = $_POST['email_address'];
+    $totalAmount     = $_POST['totalAmount'];
+    
+   
+    
+    $subject = "Calculator Inquiry | Content Writing Hub";
+    $subject2 = "Calculator Inquiry |  Content Writing Hub";
+    
+    $message =  "Word Counting :". $page_word_count ."\n\n". 
+                "Service Name :". $service_name ."\n\n". 
+                "Quantity :". $quantity ."\n\n". 
+                "Contact No. :". $phone_number ."\n\n". 
+                "Email Address :". $email_address ."\n\n". 
+                "Total Amount :". $totalAmount ."\n\n"; 
+               
+    $message2 = $message;
+    $to = "sales@contentwritinghub.com";
+    // $to = "ahsan.chishti@egeeks.org";
+    $headers = "From:" . $email_address;
+    $headers2 = "From:" . $to;
+    header('Location: thankyou');
+    
+}
+
+?>
